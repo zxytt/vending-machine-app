@@ -14,5 +14,24 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  purge: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  plugins: [
+    'tailwindcss',
+    'postcss-flexbugs-fixes',
+    [
+      'postcss-preset-env',
+      {
+        autoprefixer: {
+          flexbox: 'no-2009'
+        },
+        stage: 3,
+        features: {
+          'custom-properties': false
+        }
+      }
+    ]
+  ],
 }
